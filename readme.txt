@@ -1,24 +1,16 @@
-# FooTable #
+=== FooTable ===
+Contributors: bradvin
+Donate link:http://themergency.com/donate
+Tags: tables,responsive,jquery
+Requires at least: 3.5
+Tested up to: 3.6
+Stable tag: 0.3
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-**Contributors:** bradvin
+FooTable's goal is simple : to make HTML tables look awesome on all devices!
 
-**Tags:** tables,responsive,jquery
-
-**Requires at least:** 3.5
-
-**Tested up to:** 3.6
-
-**Stable tag:** 0.3
-
-**License:** GPLv2 or later
-
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
-
-
-**FooTable's goal is simple :** to make HTML tables look awesome on all devices!
-
-
-## Description ##
+== Description ==
 
 Have you ever wanted to show a lot of data in a table, but hate how badly it scales on smaller mobile devices? FooTable solves this problem by hiding certain columns on smaller devices, but still allowing the user to expand each row to see the columns that were hidden
 
@@ -39,41 +31,35 @@ Have you ever wanted to show a lot of data in a table, but hate how badly it sca
 *	Ability to include custom CSS
 *   Works with TablePress
 
-## Installation ##
+== Installation ==
 
 1.	Upload or unzip the plugin to your `/wp-content/plugins/` folder
 2.	Activate the plugin through the 'Plugins' menu in WordPress
 3.	Configure FooTable from the settings page
 
-## Screenshots ##
+== Screenshots ==
 
-###1. Settings - General###
-![Settings - General](http://s.wordpress.org/extend/plugins/footable/screenshot-1.png)
+1. Settings - General
+2. Settings - Demo
+3. Frontend Result
 
-###2. Settings - Demo###
-![Settings - Demo](http://s.wordpress.org/extend/plugins/footable/screenshot-2.png)
+== Changelog ==
 
-###3. Frontend Result###
-![Frontend Result](http://s.wordpress.org/extend/plugins/footable/screenshot-3.png)
-
-
-## Changelog ##
-
-### 0.3 ###
+= 0.3 =
 * Major update! Using FooBox V2 jQuery
 * Reworked the settings
 
-### 0.2.1 ###
+= 0.2.1 =
 * Updated JS to fix minor bug
 
-### 0.2 ###
+= 0.2 =
 * Initial Relase. First version.
 
-## Frequently Asked Questions ##
+== Frequently Asked Questions ==
 
-### How do I override the CSS that FooTable applies to my tables? ###
+= How do I override the CSS that FooTable applies to my tables? =
 Goto the settings page and disable the FooTable CSS, or add your own custom styling using the "Custom CSS" setting
 
-## Upgrade Notice ##
+== Upgrade Notice ==
 
 Please upgrade to the latest version

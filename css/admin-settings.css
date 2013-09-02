@@ -1,0 +1,108 @@
+.medium_textarea {
+  width:400px;
+  height:100px;
+}
+
+.short_input {
+  width:10em !important;
+}
+
+.long_input {
+  width:90% !important;
+}
+
+.foo-alert {
+    margin: 20px 0;
+    padding: 15px 30px 15px 15px;
+    border-left: 5px solid #eee;
+}
+    .foo-alert h3 {
+        margin-top: 0;
+    }
+    .foo-alert p:last-child {
+        margin-bottom: 0;
+    }
+    .foo-alert code,
+    .foo-alert .highlight {
+        background-color: #fff;
+    }
+
+/* Variations */
+.foo-alert-error {
+    background-color: #fcf2f2;
+    border-color: #dFb5b4;
+}
+.foo-alert-warning {
+    background-color: #fefbed;
+    border-color: #f1e7bc;
+}
+.foo-alert-info {
+    background-color: #f0f7fd;
+    border-color: #d0e3f0;
+}
+
+.footable-links a {
+    padding-right: 20px;
+}
+
+.footable-device-selector a {
+  background: url(img/device-sprite.png) no-repeat top left;
+  width: 24px; height: 24px;
+  margin:0 3px;
+  display:inline-block;
+  border:solid 2px transparent;
+  border-radius:3px;
+}
+
+  .footable-device-selector a.tablet{ background-position: 0 0; }
+  .footable-device-selector a.phone { background-position: -23px 0; }
+  .footable-device-selector a.desktop{ background-position: -48px 0; }
+
+    .footable-device-selector a:hover {
+      background-color:#eee;
+    }
+
+    .footable-device-selector a.chosen {
+      background-color:#ddd;
+    }
+
+.footale-demo-container {
+	width:100%;
+}
+
+    .footale-demo-container iframe {
+        width:100%;
+    }
+
+.form-table .footable th {
+    text-shadow:none !important;
+}
+
+.form-table .footable {
+    border-spacing: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.form-table .footable th {
+    padding: 10px;
+    width: inherit !important;
+}
+
+.status-metro {
+    display: inline-block;
+    padding: 2px 5px;
+    color:#fff;
+}
+
+.status-metro.status-active {
+    background: #43c83c;
+}
+
+.status-metro.status-disabled {
+    background: #999999;
+}
+
+.status-metro.status-suspended {
+    background: #fa3031;
+}

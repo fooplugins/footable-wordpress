@@ -1,0 +1,9 @@
+Simple Install
+1. Login to WordPress and go to Plugins > Add New > Upload
+2. Upload footable.zip and activate
+3. FooTable should work out of the box with any tables that have a class .footable
+4. Goto Settings > FooTable Settings to change the default configuration
+
+Manual Install
+1. Upload the footable folder to your /wp-content/plugins/ directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
