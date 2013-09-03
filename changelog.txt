@@ -1,8 +1,0 @@
-FooTable Changelog
-================
-
-> Last updated 21 Feb 2013
-
-2013.02.12 - version 0.2
-------------------------
- * Initial release
