@@ -14,10 +14,10 @@ FooTable's goal is simple : to make HTML tables look awesome on all devices!
 
 Have you ever wanted to show a lot of data in a table, but hate how badly it scales on smaller mobile devices? FooTable solves this problem by hiding certain columns on smaller devices, but still allowing the user to expand each row to see the columns that were hidden
 
-[FooTable WordPress Homepage](http://fooplugins.com/plugins/footable-lite/)
-[FooTable WordPress Documentation](http://fooplugins.com/footable-lite/documentation/)
-[FooTable jQuery Homepage](http://fooplugins.com/plugins/footable-jquery/)
-[FooTable jQuery GitHub Repo](https://github.com/bradvin/FooTable)
+[FooTable WordPress Homepage](http://fooplugins.com/plugins/footable-lite/) |
+[FooTable WordPress Documentation](http://fooplugins.com/footable-lite/documentation/) |
+[FooTable jQuery Homepage](http://fooplugins.com/plugins/footable-jquery/) |
+[FooTable jQuery GitHub Repo](https://github.com/bradvin/FooTable) |
 [FooTable jQuery Demos & Docs](http://fooplugins.com/footable-demos/)
 
 **features**
