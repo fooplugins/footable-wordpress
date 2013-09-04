@@ -24,10 +24,10 @@ if (!class_exists('FooTable_Settings')) {
 
 			$links_html = '</h3><div class="foo-alert foo-alert-warning footable-links">';
 			$links_html .= '<h3>' . __( 'Useful FooTable Links', 'footable' ) . '</h3>';
-			$links_html .= '<a target="_blank" href="' . $footable::URL_DOCS . '"><strong>' . __('Getting Started Guide', 'footable') . '</strong></a>';
-			$links_html .= '<a target="_blank" href="' . $footable::URL_HOMEPAGE . '">' . __('Plugin Homepage', 'footable') . '</a>';
-			$links_html .= '<a target="_blank" href="' . $footable::URL_JQUERY . '">' . __('jQuery Plugin', 'footable') . '</a>';
-			$links_html .= '<a target="_blank" href="' . $footable::URL_GITHUB . '">' . __('jQuery Plugin on GitHub', 'footable') . '</a>';
+			$links_html .= '<a target="_blank" href="' . FooTable::URL_DOCS . '"><strong>' . __('Getting Started Guide', 'footable') . '</strong></a>';
+			$links_html .= '<a target="_blank" href="' . FooTable::URL_HOMEPAGE . '">' . __('Plugin Homepage', 'footable') . '</a>';
+			$links_html .= '<a target="_blank" href="' . FooTable::URL_JQUERY . '">' . __('jQuery Plugin', 'footable') . '</a>';
+			$links_html .= '<a target="_blank" href="' . FooTable::URL_GITHUB . '">' . __('jQuery Plugin on GitHub', 'footable') . '</a>';
 			$links_html .= '</div>';
 
 			$settings->add_section_to_tab( 'general', 'links', $links_html );
@@ -102,7 +102,7 @@ if (!class_exists('FooTable_Settings')) {
 			$breakpoint_html .= '<h3>' . __( 'Breakpoint Help', 'footable' ) . '</h3>';
 			$breakpoint_html .= '<p>' . __( 'Breakpoints are the heart and soul of FooTable. Whenever your site is viewed on a mobile device, or if the browser window is resized, FooTable checks the width of the table. If that width is smaller than the width of a breakpoint, certain columns in the table will be hidden.', 'footable') . '</p>';
 			$breakpoint_html .= '<p>' . __( 'FooTable has two default breakpoints : <strong>tablet</strong> and <strong>phone</strong>. You can change the default size of these breakpoints below, so that they match your site\'s theme.', 'footable') . '</p>';
-			$breakpoint_html .= '<p><a target="_blank" href="' . $footable::URL_DOCS . '">' . __('Read more at the plugin documentation', 'footable') . '</a></p>';
+			$breakpoint_html .= '<p><a target="_blank" href="' . FooTable::URL_DOCS . '">' . __('Read more at the plugin documentation', 'footable') . '</a></p>';
 			$breakpoint_html .= '</div>';
 
 			$settings->add_section_to_tab( 'breakpoints', 'breakpoints', $breakpoint_html );
@@ -156,7 +156,7 @@ if (!class_exists('FooTable_Settings')) {
 			$settings->add_setting( array(
 				'id'      => 'manual_columns',
 				'title'   => __( 'Manual Column Visibility', 'footable' ),
-				'desc'    => __( 'You can manually define which table columns will be visible by adding data attributes to your table HTML.', 'footable' ) . ' <a target="_blank" href="' . $footable::URL_DOCS . '">' .  __('Read the documentation for more details', 'footable') . '</a>.',
+				'desc'    => __( 'You can manually define which table columns will be visible by adding data attributes to your table HTML.', 'footable' ) . ' <a target="_blank" href="' . FooTable::URL_DOCS . '">' .  __('Read the documentation for more details', 'footable') . '</a>.',
 				'type'    => 'checkbox',
 				'section' => 'columns',
 				'tab'     => 'breakpoints'
@@ -178,7 +178,7 @@ if (!class_exists('FooTable_Settings')) {
 			$theme_html .= '<h3>' . __( 'FooTable Theme', 'footable' ) . '</h3>';
 			$theme_html .= '<p>' . __( 'FooTable is built to look great with BootStrap out of the box, and the default theme adds no table styling and rather uses the BootStrap table styles.', 'footable') . '</p>';
 			$theme_html .= '<p>' . __( 'However, we do have two table themes you can use if your theme does not use BootStrap.', 'footable') . '</p>';
-			$theme_html .= '<p><a target="_blank" href="' . $footable::URL_DOCS . '">' . __('Read more at the plugin documentation', 'footable') . '</a></p>';
+			$theme_html .= '<p><a target="_blank" href="' . FooTable::URL_DOCS . '">' . __('Read more at the plugin documentation', 'footable') . '</a></p>';
 			$theme_html .= '</div>';
 
 			$settings->add_section_to_tab( 'looknfeel', 'theme', $theme_html );
