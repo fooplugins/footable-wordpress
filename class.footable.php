@@ -37,7 +37,7 @@ if (!class_exists('FooTable')) {
 		const URL_DOCS = 'http://fooplugins.com/footable-lite/documentation/';
 
 		function __construct($file) {
-			$this->init(  $file, 'footable', '0.3', 'FooTable' );
+			$this->init(  $file, 'footable', '0.3.1', 'FooTable' );
 			add_action( 'init', array($this, 'init_footable') );
 		}
 
@@ -88,7 +88,6 @@ var $FOOTABLE = $FOOTABLE || {};
 	jQuery.fn.attrAppendWithComma=function(a,b){var c;return this.each(function(){c=$(this),void 0!==c.attr(a)&&""!=c.attr(a)?c.attr(a,c.attr(a)+","+b):c.attr(a,b)})};jQuery.fn.footableAttr=function(a,b){return this.each(function(){var c=$(this);c.data("auto-columns")!==!1&&(c.find("thead th:gt("+a+")").attrAppendWithComma("data-hide","tablet"),c.find("thead th:gt("+b+")").attrAppendWithComma("data-hide","phone"))})},jQuery.fn.footableFilter=function(a){return this.each(function(){var b=$(this);b.data("filter")||b.data("filter")===!1||b.data("filter-text-only","true").before(\'<div class="footable-filter-container"><input placeholder="\'+a+\'" style="float:right" type="text" class="footable-filter" /></div>\')})},jQuery.fn.footablePager=function(){return this.each(function(){var a=$(this);if(a.data("page")!==!1){var b=$(\'<tfoot class="hide-if-no-paging"><tr><td><div class="pagination pagination-centered"></div></td></tr></tfoot>\');b.find("td").attr("colspan",a.find("thead th").length),a.find("tbody:last").after(b)}})};
 
 	$FOOTABLE.init = function() {
-		var $tables;
 ';
 			$breakpoint_tablet = $this->options()->get_int( 'breakpoint_tablet', 768 );
 			$breakpoint_phone = $this->options()->get_int( 'breakpoint_phone', 320 );
@@ -96,6 +95,8 @@ var $FOOTABLE = $FOOTABLE || {};
 			$columns_tablet = $this->options()->get_int( 'columns_tablet', 4 ) - 1;
 			$columns_phone = $this->options()->get_int( 'columns_phone', 2 ) - 1;
 			$manual_columns = $this->options()->is_checked( 'manual_columns' );
+			$filtering = $this->options()->is_checked('enable_filtering', true);
+			$pagination = $this->options()->is_checked('enable_pagination', true);
 			$tablepress = $this->options()->is_checked('tablepress', true);
 
 			//get custom JS (Before) from the settings page
@@ -117,18 +118,23 @@ var $FOOTABLE = $FOOTABLE || {};
 
 			if ( !empty( $selector ) ) {
 				$no_js = false;
-				$js .= '		$tables = $("'.$selector.'");
+				$js .= '		$("'.$selector.'")
 ';
 
 				if ( !$manual_columns ) {
-					$js .= '
-		$tables.footableAttr('.$columns_tablet.','.$columns_phone.');
+					$js .= '			.footableAttr('.$columns_tablet.','.$columns_phone.')
+';
+				}
+				if ($filtering) {
+					$js .= '			.footableFilter("' . __('search','footable') . '")
+';
+				}
+				if ($pagination) {
+					$js .= '			.footablePager()
 ';
 				}
 
-				$js .= '		$tables.footableFilter("' . __('search','footable') . '")
-			.footablePager()
-			.footable( { breakpoints: { phone: '.$breakpoint_phone.', tablet: '.$breakpoint_tablet.' } });
+				$js .= '			.footable( { breakpoints: { phone: '.$breakpoint_phone.', tablet: '.$breakpoint_tablet.' } });
 ';
 			}
 
