@@ -4,7 +4,7 @@ Donate link:http://themergency.com/donate
 Tags: tables,responsive,jquery
 Requires at least: 3.5
 Tested up to: 3.6
-Stable tag: 0.3
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,10 @@ Have you ever wanted to show a lot of data in a table, but hate how badly it sca
 3. Frontend Result
 
 == Changelog ==
+
+= 0.3.1 =
+* Fixed T_PAAMAYIM_NEKUDOTAYIM syntax error bug
+* Disabling filtering and pagination settings now works
 
 = 0.3 =
 * Major update! Using FooBox V2 jQuery

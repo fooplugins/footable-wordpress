@@ -8,7 +8,7 @@
 
 **Tested up to:** 3.6
 
-**Stable tag:** 0.3
+**Stable tag:** 0.3.1
 
 **License:** GPLv2 or later
 
@@ -58,6 +58,10 @@ Have you ever wanted to show a lot of data in a table, but hate how badly it sca
 
 
 ## Changelog ##
+
+### 0.3.1 ###
+* Fixed T_PAAMAYIM_NEKUDOTAYIM syntax error bug
+* Disabling filtering and pagination settings now works
 
 ### 0.3 ###
 * Major update! Using FooBox V2 jQuery
