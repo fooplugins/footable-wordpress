@@ -11,7 +11,7 @@
  * Plugin Name: FooTable
  * Plugin URI: http://fooplugins.com/plugins/footable-lite/
  * Description: FooTable makes your HTML tables look awesome on smaller devices
- * Version: 0.3.1
+ * Version: 0.3.2
  * Author: Brad Vincent
  * Author URI: http://fooplugins.com
  * License: GPL2
