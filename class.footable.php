@@ -241,7 +241,7 @@ jQuery(function($) {
 			$custom_css = $this->options()->get( 'custom_css', '' );
 
 			if (class_exists('TablePress')) {
-				$custom_css .= '.tablepress thead th div { float:left; }';
+				$custom_css .= '.tablepress.footable thead th div { float:left; }';
 			}
 
 			if (empty($custom_css)) return;
