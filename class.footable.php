@@ -42,8 +42,8 @@ if (!class_exists('FooTable')) {
 		}
 
 		function init_footable() {
-			//TODO: translations
-			//add_action('plugins_loaded', array($this, 'load_text_domain') );
+			
+			add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
 
 			if (is_admin()) {
 				add_action( $this->plugin_slug . '-admin_create_settings', array('FooTable_Settings', 'create_settings'), 10, 2 );
