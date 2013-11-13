@@ -12,25 +12,29 @@ if (!class_exists('FooTable_Settings')) {
         static function create_settings($footable, $settings) {
 
 			$settings->add_tab( 'general', __('General', 'footable') );
+			
+			if ( apply_filters( 'footable-settings_info', true ) && apply_filters( 'footable-settings_info_help', true ) ) {
+				$help_html = '</h3><div class="foo-alert foo-alert-info">';
+				$help_html .= '<h3>' . __( 'What is FooTable?', 'footable' ) . '</h3>';
+				$help_html .= '<p>' . __( 'FooTable\'s goal is simple : to make HTML tables look awesome on all devices!', 'footable') . '</p>';
+				$help_html .= '<p>' . __( 'Have you ever wanted to show a lot of data in a table, but hate how badly it scales on smaller mobile devices? FooTable solves this problem by hiding certain columns on smaller devices, but still allowing the user to expand each row to see the columns that were hidden.', 'footable') . '</p>';
+				$help_html .= '<p><a class="trigger-nav-tab" href="#demo">' . __('Check out the demo to see it in action', 'footable') . '</a></p>';
+				$help_html .= '</div>';
 
-			$help_html = '</h3><div class="foo-alert foo-alert-info">';
-			$help_html .= '<h3>' . __( 'What is FooTable?', 'footable' ) . '</h3>';
-			$help_html .= '<p>' . __( 'FooTable\'s goal is simple : to make HTML tables look awesome on all devices!', 'footable') . '</p>';
-			$help_html .= '<p>' . __( 'Have you ever wanted to show a lot of data in a table, but hate how badly it scales on smaller mobile devices? FooTable solves this problem by hiding certain columns on smaller devices, but still allowing the user to expand each row to see the columns that were hidden.', 'footable') . '</p>';
-			$help_html .= '<p><a class="trigger-nav-tab" href="#demo">' . __('Check out the demo to see it in action', 'footable') . '</a></p>';
-			$help_html .= '</div>';
+				$settings->add_section_to_tab( 'general', 'help', $help_html );
+			}
+			
+			if ( apply_filters( 'footable-settings_links', true ) ) {
+				$links_html = '</h3><div class="foo-alert foo-alert-warning footable-links">';
+				$links_html .= '<h3>' . __( 'Useful FooTable Links', 'footable' ) . '</h3>';
+				$links_html .= '<a target="_blank" href="' . FooTable::URL_DOCS . '"><strong>' . __('Getting Started Guide', 'footable') . '</strong></a>';
+				$links_html .= '<a target="_blank" href="' . FooTable::URL_HOMEPAGE . '">' . __('Plugin Homepage', 'footable') . '</a>';
+				$links_html .= '<a target="_blank" href="' . FooTable::URL_JQUERY . '">' . __('jQuery Plugin', 'footable') . '</a>';
+				$links_html .= '<a target="_blank" href="' . FooTable::URL_GITHUB . '">' . __('jQuery Plugin on GitHub', 'footable') . '</a>';
+				$links_html .= '</div>';
 
-			$settings->add_section_to_tab( 'general', 'help', $help_html );
-
-			$links_html = '</h3><div class="foo-alert foo-alert-warning footable-links">';
-			$links_html .= '<h3>' . __( 'Useful FooTable Links', 'footable' ) . '</h3>';
-			$links_html .= '<a target="_blank" href="' . FooTable::URL_DOCS . '"><strong>' . __('Getting Started Guide', 'footable') . '</strong></a>';
-			$links_html .= '<a target="_blank" href="' . FooTable::URL_HOMEPAGE . '">' . __('Plugin Homepage', 'footable') . '</a>';
-			$links_html .= '<a target="_blank" href="' . FooTable::URL_JQUERY . '">' . __('jQuery Plugin', 'footable') . '</a>';
-			$links_html .= '<a target="_blank" href="' . FooTable::URL_GITHUB . '">' . __('jQuery Plugin on GitHub', 'footable') . '</a>';
-			$links_html .= '</div>';
-
-			$settings->add_section_to_tab( 'general', 'links', $links_html );
+				$settings->add_section_to_tab( 'general', 'links', $links_html );
+			}
 
 			$settings->add_section_to_tab( 'general', 'tables', __('FooTable Setup', 'footable') );
 
@@ -97,16 +101,18 @@ if (!class_exists('FooTable_Settings')) {
 //			) );
 
 			$settings->add_tab( 'breakpoints', __('Breakpoints', 'footable') );
+			
+			if ( apply_filters( 'footable-settings_info', true ) && apply_filters( 'footable-settings_info_breakpoint', true ) ) {
+				$breakpoint_html = '</h3><div class="foo-alert foo-alert-info">';
+				$breakpoint_html .= '<h3>' . __( 'Breakpoint Help', 'footable' ) . '</h3>';
+				$breakpoint_html .= '<p>' . __( 'Breakpoints are the heart and soul of FooTable. Whenever your site is viewed on a mobile device, or if the browser window is resized, FooTable checks the width of the table. If that width is smaller than the width of a breakpoint, certain columns in the table will be hidden.', 'footable') . '</p>';
+				$breakpoint_html .= '<p>' . __( 'FooTable has two default breakpoints : <strong>tablet</strong> and <strong>phone</strong>. You can change the default size of these breakpoints below, so that they match your site\'s theme.', 'footable') . '</p>';
+				$breakpoint_html .= '<p><a target="_blank" href="' . FooTable::URL_DOCS . '">' . __('Read more at the plugin documentation', 'footable') . '</a></p>';
+				$breakpoint_html .= '</div>';
 
-			$breakpoint_html = '</h3><div class="foo-alert foo-alert-info">';
-			$breakpoint_html .= '<h3>' . __( 'Breakpoint Help', 'footable' ) . '</h3>';
-			$breakpoint_html .= '<p>' . __( 'Breakpoints are the heart and soul of FooTable. Whenever your site is viewed on a mobile device, or if the browser window is resized, FooTable checks the width of the table. If that width is smaller than the width of a breakpoint, certain columns in the table will be hidden.', 'footable') . '</p>';
-			$breakpoint_html .= '<p>' . __( 'FooTable has two default breakpoints : <strong>tablet</strong> and <strong>phone</strong>. You can change the default size of these breakpoints below, so that they match your site\'s theme.', 'footable') . '</p>';
-			$breakpoint_html .= '<p><a target="_blank" href="' . FooTable::URL_DOCS . '">' . __('Read more at the plugin documentation', 'footable') . '</a></p>';
-			$breakpoint_html .= '</div>';
-
-			$settings->add_section_to_tab( 'breakpoints', 'breakpoints', $breakpoint_html );
-
+				$settings->add_section_to_tab( 'breakpoints', 'breakpoints', $breakpoint_html );
+			}
+			
 			$settings->add_setting( array(
 				'id'      => 'breakpoint_tablet',
 				'title'   => __( 'Tablet Breakpoint', 'footable' ),
@@ -173,15 +179,17 @@ if (!class_exists('FooTable_Settings')) {
 //			) );
 
 			$settings->add_tab( 'looknfeel', __('Look &amp; Feel', 'footable') );
+			
+			if ( apply_filters( 'footable-settings_info', true ) && apply_filters( 'footable-settings_info_theme', true ) ) {
+				$theme_html = '</h3><div class="foo-alert foo-alert-info">';
+				$theme_html .= '<h3>' . __( 'FooTable Theme', 'footable' ) . '</h3>';
+				$theme_html .= '<p>' . __( 'FooTable is built to look great with BootStrap out of the box, and the default theme adds no table styling and rather uses the BootStrap table styles.', 'footable') . '</p>';
+				$theme_html .= '<p>' . __( 'However, we do have two table themes you can use if your theme does not use BootStrap.', 'footable') . '</p>';
+				$theme_html .= '<p><a target="_blank" href="' . FooTable::URL_DOCS . '">' . __('Read more at the plugin documentation', 'footable') . '</a></p>';
+				$theme_html .= '</div>';
 
-			$theme_html = '</h3><div class="foo-alert foo-alert-info">';
-			$theme_html .= '<h3>' . __( 'FooTable Theme', 'footable' ) . '</h3>';
-			$theme_html .= '<p>' . __( 'FooTable is built to look great with BootStrap out of the box, and the default theme adds no table styling and rather uses the BootStrap table styles.', 'footable') . '</p>';
-			$theme_html .= '<p>' . __( 'However, we do have two table themes you can use if your theme does not use BootStrap.', 'footable') . '</p>';
-			$theme_html .= '<p><a target="_blank" href="' . FooTable::URL_DOCS . '">' . __('Read more at the plugin documentation', 'footable') . '</a></p>';
-			$theme_html .= '</div>';
-
-			$settings->add_section_to_tab( 'looknfeel', 'theme', $theme_html );
+				$settings->add_section_to_tab( 'looknfeel', 'theme', $theme_html );
+			}
 
 			$theme_choices = array(
 				'bootstrap' => __('Default', 'footable'),
@@ -248,17 +256,19 @@ if (!class_exists('FooTable_Settings')) {
 				'section' => 'js',
 				'tab'     => 'advanced'
 			) );
+			
+			if ( apply_filters( 'footable-disallow_debug', false ) === false ) {
+				$settings->add_section_to_tab( 'advanced', 'debug', __('Debug', 'footable') );
 
-			$settings->add_section_to_tab( 'advanced', 'debug', __('Debug', 'footable') );
-
-			$settings->add_setting( array(
-				'id'      => 'enable_debug',
-				'title'   => __( 'Enable Debug Mode', 'footable' ),
-				'desc'    => __( 'When debug is enabled, FooTable will write to the console log so you can debug any problems.<br />We also show an extra debug information tab on this settings page', 'footable' ),
-				'type'    => 'checkbox',
-				'section' => 'debug',
-				'tab'     => 'advanced'
-			) );
+				$settings->add_setting( array(
+					'id'      => 'enable_debug',
+					'title'   => __( 'Enable Debug Mode', 'footable' ),
+					'desc'    => __( 'When debug is enabled, FooTable will write to the console log so you can debug any problems.<br />We also show an extra debug information tab on this settings page', 'footable' ),
+					'type'    => 'checkbox',
+					'section' => 'debug',
+					'tab'     => 'advanced'
+				) );
+			}
 
 			$settings->add_tab( 'demo', __('Demo', 'footable') );
 
