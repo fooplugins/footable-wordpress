@@ -12,11 +12,9 @@
 
 if (!class_exists('FooTable')) {
 
-	define('FOOTABLE_PATH', plugin_dir_path( __FILE__ ));
-
 	// Includes
-	require_once( FOOTABLE_PATH . 'includes/Foo_Plugin_Base.php' );
-	require_once( FOOTABLE_PATH . 'includes/admin_settings.php' );
+	require_once 'includes/Foo_Plugin_Base.php';
+	require_once 'includes/admin_settings.php';
 
 	class FooTable extends Foo_Plugin_Base_v1_1 {
 
