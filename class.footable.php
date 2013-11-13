@@ -26,7 +26,7 @@ if (!class_exists('FooTable')) {
 		const JS_PAGINATE = 'footable.paginate.min.js';
 
 		const CSS = 'footable.core.min.css';
-		const CSS_BOOTSTRAP = 'bootstrap.2.3.1.css';
+		const CSS_BOOTSTRAP = 'bootstrap.2.3.1.min.css';
 		const CSS_METRO = 'footable.metro.min.css';
 		const CSS_STANDALONE = 'footable.standalone.min.css';
 
