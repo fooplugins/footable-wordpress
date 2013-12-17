@@ -147,12 +147,9 @@ if ( !class_exists( 'Foo_Plugin_Base_v1_1' ) ) {
 
 				// Add a links to the plugin listing
 				add_filter( 'plugin_action_links_' . plugin_basename( $this->plugin_file ), array($this, 'admin_plugin_listing_actions') );
-
-				// output CSS to the admin pages
-				add_action( 'admin_print_styles', array($this, 'admin_print_styles') );
-
-				// output JS to the admin pages
-				add_action( 'admin_print_scripts', array($this, 'admin_print_scripts') );
+				
+				// load scripts and styles on the settings page
+				add_action( 'load-settings_page_' . $this->plugin_slug, array( $this, 'load_settings_assets' ) );
 			}
 
 			do_action( $this->plugin_slug . '-' . (is_admin() ? 'admin' : '') . '_init' );
@@ -255,6 +252,14 @@ if ( !class_exists( 'Foo_Plugin_Base_v1_1' ) ) {
 		// register any options/settings we may want to store for this plugin
 		function admin_create_settings() {
 			do_action( $this->plugin_slug . '-admin_create_settings', $this, $this->_settings );
+		}
+		
+		function load_settings_assets() {
+			// Render CSS to the admin pages
+			add_action( 'admin_print_styles', array( &$this, 'admin_print_styles' ) );
+
+			// Render JS to the admin pages
+			add_action( 'admin_print_scripts', array( &$this, 'admin_print_scripts' ) );
 		}
 
 		// enqueue the admin scripts
